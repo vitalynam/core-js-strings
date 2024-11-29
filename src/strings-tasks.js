@@ -40,8 +40,11 @@ function getStringLength(value) {
  *   isString('test') => true
  *   isString(new String('test')) => true
  */
-function isString(/* value */) {
-  throw new Error('Not implemented');
+function isString(value) {
+  if (typeof value === 'string' || value instanceof String) {
+    return true;
+  }
+  return false;
 }
 
 /**
@@ -57,7 +60,7 @@ function isString(/* value */) {
  *   concatenateStrings('', 'bb') => 'bb'
  */
 function concatenateStrings(value1, value2) {
-  return value1 + value2;
+  return value1.concat(value2);
 }
 
 /**
@@ -72,10 +75,7 @@ function concatenateStrings(value1, value2) {
  *   getFirstChar('') => ''
  */
 function getFirstChar(value) {
-  if (value === '') {
-    return '';
-  }
-  return value[0];
+  return value.charAt(0);
 }
 
 /**
@@ -136,15 +136,8 @@ function removeTrailingWhitespaces(/* value */) {
  *   repeatString('', 3) => ''
  *   repeatString('abc', -2) => ''
  */
-function repeatString(str, times) {
-  let str2 = str;
-  if (str === '' || times < 0) {
-    return '';
-  }
-  for (let i = 1; i < times; i += 1) {
-    str2 += str;
-  }
-  return str2;
+function repeatString(/* str, times */) {
+  throw new Error('Not implemented');
 }
 
 /**
